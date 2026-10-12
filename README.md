@@ -60,7 +60,7 @@ Detection and translation use Chrome's on-device [Language Detector](https://dev
 
 Releases are automated with GitHub Actions. Either:
 
-- Run the **Release** workflow from the Actions tab and pick patch, minor or major, or
+- Run the **Release** workflow from the Actions tab and pick patch, minor or major (or none to release the current version), or
 - Change `version` in `src/manifest.json` and push to `main`
 
 The workflow checks the code, packages `src` into a zip and publishes a GitHub release with generated notes.
