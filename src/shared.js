@@ -5,10 +5,10 @@ const CTL_DEFAULTS = {
   target: (navigator.language || 'en').split('-')[0],
   cloud: false,
   // look
-  accent: '#a970ff',
-  highlight: 'both', // both | bar | tint | none
+  accent: '#4d9bff',
+  highlight: 'none', // both | bar | tint | none
   tint: 7, // highlight background strength, %
-  textColor: 'soft', // soft | accent | plain | dim
+  textColor: 'dim', // soft | accent | plain | dim
   size: 94, // translation size, % of chat text
   tag: true, // language tag pill
   italic: false,
