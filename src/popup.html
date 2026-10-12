@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <style id="look"></style>
+  </head>
+  <body>
+    <div class="top">
+    <header>
+      <div class="brand"><span class="logo"></span>Chat Translate</div>
+      <label class="switch" title="Enable translation">
+        <input type="checkbox" data-key="enabled" />
+        <span></span>
+      </label>
+    </header>
+
+    <section class="preview" title="Live preview">
+      <div class="line"><b style="color: #8a8a93">noodle_fan</b>: is the patch out yet</div>
+      <div class="line ctl-hl">
+        <b style="color: #ff7f50">steel_platecarrier</b>:
+        <span class="ctl-orig">맨날 PVP PVE 갈라치기 지겹지도 않나</span>
+        <div class="ctl-tr"><span class="ctl-tag">KO</span><span class="ctl-text">Aren't you tired of splitting PVP and PVE every day</span></div>
+      </div>
+      <div class="line"><b style="color: #3cb4ff">mod_kira</b>: KEKW</div>
+    </section>
+    </div>
+
+    <main>
+      <h2>Look</h2>
+      <div class="row">
+        <span>Colour</span>
+        <div class="swatches" id="swatches">
+          <label class="swatch custom" title="Custom colour"><input type="color" id="custom" /></label>
+        </div>
+      </div>
+      <div class="row">
+        <span>Highlight</span>
+        <div class="seg" data-key="highlight">
+          <button data-v="both">Bar + tint</button><button data-v="bar">Bar</button><button data-v="tint">Tint</button><button data-v="none">Off</button>
+        </div>
+      </div>
+      <div class="row" id="tint-row">
+        <span>Tint strength</span>
+        <div class="range"><input type="range" data-key="tint" min="2" max="30" /><output></output></div>
+      </div>
+      <div class="row">
+        <span>Text</span>
+        <div class="seg" data-key="textColor">
+          <button data-v="soft">Soft</button><button data-v="plain">Plain</button><button data-v="accent">Colour</button><button data-v="dim">Dim</button>
+        </div>
+      </div>
+      <div class="row">
+        <span>Text size</span>
+        <div class="range"><input type="range" data-key="size" min="75" max="125" step="5" /><output></output></div>
+      </div>
+      <div class="row">
+        <span>Language tag</span>
+        <label class="switch"><input type="checkbox" data-key="tag" /><span></span></label>
+      </div>
+      <div class="row">
+        <span>Italic</span>
+        <label class="switch"><input type="checkbox" data-key="italic" /><span></span></label>
+      </div>
+
+      <h2>Translation</h2>
+      <div class="row">
+        <span>Translate to</span>
+        <select data-key="target" id="target"></select>
+      </div>
+      <div class="row">
+        <div>
+          <span>Show</span>
+          <small id="mode-hint">Translation under the message</small>
+        </div>
+        <div class="seg" data-key="mode">
+          <button data-v="below">Below</button><button data-v="replace">Replace</button>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <span>Sensitivity</span>
+          <small>For Latin-alphabet languages</small>
+        </div>
+        <div class="seg" data-key="sensitivity">
+          <button data-v="strict">Strict</button><button data-v="balanced">Normal</button><button data-v="loose">Loose</button>
+        </div>
+      </div>
+      <div class="row col">
+        <div>
+          <span>Don't translate</span>
+          <small>Languages you already read</small>
+        </div>
+        <div class="chips" id="skip">
+          <select id="skip-add"><option value="">+ Add</option></select>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <span>Translate my replies</span>
+          <small>When replying to a translated message, Enter translates yours to their language, Enter again sends</small>
+        </div>
+        <label class="switch"><input type="checkbox" data-key="replyTranslate" /><span></span></label>
+      </div>
+      <div class="row">
+        <div>
+          <span>Cloud fallback</span>
+          <small>Google Translate when on-device isn't available</small>
+        </div>
+        <label class="switch"><input type="checkbox" id="cloud" /><span></span></label>
+      </div>
+    </main>
+
+    <footer>
+      <span class="dot" id="dot"></span><span id="status">Checking…</span>
+      <button class="link" id="reset" title="Reset look & behaviour to defaults">Reset</button>
+    </footer>
+    <script src="shared.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
